@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/06/22/Hexo和GitHub-Page-搭建个人博客/img/img02.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/22/Hexo和GitHub-Page-搭建个人博客/img/img03.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/22/Hexo和GitHub-Page-搭建个人博客/img/img04.png">
-<meta property="og:updated_time" content="2019-06-22T14:52:22.704Z">
+<meta property="og:updated_time" content="2019-06-24T07:31:59.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo和GitHub Page 搭建个人博客">
 <meta name="twitter:description" content="个人博客的搭建">
@@ -399,7 +399,7 @@ daovoice('update');
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  401
+                  407
                 </span>
               
 
@@ -444,19 +444,10 @@ daovoice('update');
 </ul>
 <hr>
 <h3 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2 . 安装hexo"></a>2 . 安装hexo</h3><p>  2.1  安装Hexo，在命令行（即Git Bash）运行以下命令：</p>
-<blockquote>
-<ul>
-<li>npm install -g hexo-cli</li>
-</ul>
-</blockquote>
-<p> 2.2 创建一个文件夹为项目文件夹，然后在此目录下打开git bash执行以下命令初始化Hexo</p>
-<blockquote>
-<p>hexo init</p>
-</blockquote>
-<p>  2.3 会生成一系列文件，在站点下启动服务，执行命令如下</p>
-<blockquote>
-<p>hexo server</p>
-</blockquote>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p> 2.2 创建一个文件夹为项目文件夹，然后在此目录下打开git bash执行以下命令初始化Hexo<br>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
+<p>  2.3 会生成一系列文件，在站点下启动服务，执行命令如下<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server  (可简写为  hexo s)</span><br></pre></td></tr></table></figure></p>
 <p>  2.4 浏览器访问网址 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
 <p>  博客在本地已搭建完成。</p>
 <hr>
@@ -474,19 +465,17 @@ daovoice('update');
 <li><p>将本地Hexo博客推送到GithubPages</p>
 <ol>
 <li><p>安装hexo-deployer-git插件。在命令行（即Git Bash）运行以下命令即可：</p>
-<blockquote>
-<p>npm install hexo-deployer-git –save</p>
-</blockquote>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>修改<code>_config.yml</code>（在站点目录下）。文件末尾修改为：</p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:&lt;Github账号名称&gt;/&lt;Github账号名称&gt;.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:&lt;Github账号名称&gt;/&lt;Github账号名称&gt;.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
 <p>  注：上面仓库地址是ssh地址，需要生成一个ssh秘钥，参考：<a href="https://www.jianshu.com/p/f92ed1ca8120" target="_blank" rel="noopener">https://www.jianshu.com/p/f92ed1ca8120</a></p>
 </li>
 <li><p>最后下面三行执行命令</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 
 <p>  博客已经部署到了远程，通过 https://&lt;Github账号名称&gt;.github.io 即可访问</p>
 </li>
@@ -648,7 +637,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
