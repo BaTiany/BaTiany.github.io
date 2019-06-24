@@ -372,6 +372,16 @@ daovoice('update');
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/22/Hexo和GitHub-Page-搭建个人博客/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/22/Hexo和GitHub-Page-搭建个人博客/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -553,6 +563,16 @@ daovoice('update');
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/22/关于React/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/22/关于React/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -988,6 +1008,14 @@ daovoice('update');
 
   
 
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
 
 
 
@@ -1013,6 +1041,28 @@ daovoice('update');
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'nEkOsd50MbNy3N4nKIiBWynl-gzGzoHsz',
+        appKey: 'uqiLzgEndRgW1i9NRPAYEnT9',
+        placeholder: 'Come on',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'14' || 10,
+    });
+  </script>
 
 
 
