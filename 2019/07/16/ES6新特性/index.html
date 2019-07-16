@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Babel转码器Babel 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在现有环境执行。可通过以下命令安装在项目目录中。 1npm install --save-dev @babel/core  let与const命令let 命令 let 用来声明变量，用法类似于 var，但是声明的变量只在let命令所`在的代码块有效  const 命令 const 声明常量，一">
+<meta name="description" content="ECMASript 6 在 React 和 Vue 中使用了大量的 ES6 语法，本文简单的总结了 ES6 的一些基本特性">
 <meta name="keywords" content="JavaScript 前端 ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMASript 6">
 <meta property="og:url" content="http://yoursite.com/2019/07/16/ES6新特性/index.html">
 <meta property="og:site_name" content="Clearlove&#39;s blog">
-<meta property="og:description" content="Babel转码器Babel 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在现有环境执行。可通过以下命令安装在项目目录中。 1npm install --save-dev @babel/core  let与const命令let 命令 let 用来声明变量，用法类似于 var，但是声明的变量只在let命令所`在的代码块有效  const 命令 const 声明常量，一">
+<meta property="og:description" content="ECMASript 6 在 React 和 Vue 中使用了大量的 ES6 语法，本文简单的总结了 ES6 的一些基本特性">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-16T11:30:24.119Z">
+<meta property="og:updated_time" content="2019-07-16T11:48:49.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMASript 6">
-<meta name="twitter:description" content="Babel转码器Babel 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在现有环境执行。可通过以下命令安装在项目目录中。 1npm install --save-dev @babel/core  let与const命令let 命令 let 用来声明变量，用法类似于 var，但是声明的变量只在let命令所`在的代码块有效  const 命令 const 声明常量，一">
+<meta name="twitter:description" content="ECMASript 6 在 React 和 Vue 中使用了大量的 ES6 语法，本文简单的总结了 ES6 的一些基本特性">
 
 
 
@@ -441,9 +441,15 @@ daovoice('update');
       
 
       
-        <h1 id="Babel转码器"><a href="#Babel转码器" class="headerlink" title="Babel转码器"></a><code>Babel</code>转码器</h1><p><code>Babel</code> 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在现有环境执行。可通过以下命令安装在项目目录中。</p>
+        <h1 id="ECMASript-6"><a href="#ECMASript-6" class="headerlink" title="ECMASript 6"></a>ECMASript 6</h1><hr>
+<p>在 React 和 Vue 中使用了大量的 ES6 语法，本文简单的总结了 ES6 的一些基本特性</p>
+<a id="more"></a>
+
+<hr>
+<h1 id="Babel转码器"><a href="#Babel转码器" class="headerlink" title="Babel转码器"></a><code>Babel</code>转码器</h1><p><code>Babel</code> 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在现有环境执行。可通过以下命令安装在项目目录中。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev @babel/core</span><br></pre></td></tr></table></figure>
 
+<hr>
 <h1 id="let与const命令"><a href="#let与const命令" class="headerlink" title="let与const命令"></a><code>let</code>与<code>const</code>命令</h1><h2 id="let-命令"><a href="#let-命令" class="headerlink" title="let 命令"></a><code>let</code> 命令</h2><blockquote>
 <p>let 用来声明变量，用法类似于 var，但是声明的变量只在<code>let</code>命令所`在的代码块有效</p>
 </blockquote>
@@ -453,9 +459,11 @@ daovoice('update');
 <h2 id="let-const-var的区别"><a href="#let-const-var的区别" class="headerlink" title="let const var的区别"></a><code>let const var</code>的区别</h2><blockquote>
 <p>1、var 有变量提升，let 与 const 没有<br><br>2、var 定义的变量可以修改，如果不初始化会输出 undefined，不会报错。<br><br>3、const 定义的变量不可以修改，而且必须初始化。<br><br>4、let 是块级作用域，函数内部使用 let 定义后，对函数外部无影响。</p>
 </blockquote>
+<hr>
 <h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">name</span>: <span class="string">"老王"</span>, <span class="attr">age</span>: <span class="number">20</span> &#125;;</span><br><span class="line"><span class="comment">// 解构为</span></span><br><span class="line"><span class="keyword">var</span> &#123; name, age &#125; = obj;</span><br><span class="line">name; <span class="comment">// 老王</span></span><br><span class="line">age; <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
 
+<hr>
 <h1 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h1><p>扩展运算符（spread）是三个点（…）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line"><span class="built_in">console</span>.log(...str); <span class="comment">// a,b,c</span></span><br></pre></td></tr></table></figure>
 
@@ -463,6 +471,7 @@ daovoice('update');
 <p>数组是复合的数据类型，直接复制的话，只是复制了指向底层数据结构的指针，而不是克隆一个全新的数组。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a1 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="comment">// 写法一</span></span><br><span class="line"><span class="keyword">const</span> a2 = [...a1];</span><br><span class="line"><span class="comment">// 写法二</span></span><br><span class="line"><span class="keyword">const</span> [...a2] = a1;</span><br></pre></td></tr></table></figure>
 
+<hr>
 <h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p>模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#result"</span>).append(</span><br><span class="line">  <span class="string">"There are &lt;b&gt;"</span> +</span><br><span class="line">    basket.count +</span><br><span class="line">    <span class="string">"&lt;/b&gt; "</span> +</span><br><span class="line">    <span class="string">"items in your basket, "</span> +</span><br><span class="line">    <span class="string">"&lt;em&gt;"</span> +</span><br><span class="line">    basket.onSale +</span><br><span class="line">    <span class="string">"&lt;/em&gt; are on sale!"</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
@@ -472,10 +481,13 @@ daovoice('update');
 <p>模板字符串嵌入变量，需要将变量写入<code>${}</code>中</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">"Bob"</span>,</span><br><span class="line">  time = <span class="string">"today"</span>;</span><br><span class="line"><span class="string">`Hello <span class="subst">$&#123;name&#125;</span>, how are you <span class="subst">$&#123;time&#125;</span>?`</span>;</span><br></pre></td></tr></table></figure>
 
+<hr>
 <h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><p>ES6 允许使用“箭头”（=&gt;）定义函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">5</span>;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1, num2</span>) =&gt;</span> num1 + num2;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<hr>
 <h1 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h1><p>ES6 引入了一种新的原始数据类型 Symbol，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
+<hr>
 <h1 id="Promise-对象"><a href="#Promise-对象" class="headerlink" title="Promise 对象"></a>Promise 对象</h1><h2 id="promis-简介"><a href="#promis-简介" class="headerlink" title="promis 简介"></a>promis 简介</h2><blockquote>
 <p>Promise 对象用于异步操作，它表示一个尚未完成且预计在未来完成的异步操作。<br></p>
 </blockquote>
@@ -496,11 +508,13 @@ daovoice('update');
 <p>Promise 对象接收两个参数</p>
 <p><code>resolve()</code> 在异步操作成功时调用，并将异步操作的结果，作为参数传递出去</p>
 <p><code>reject()</code> 在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。</p>
+<hr>
 <h1 id="Generator-函数"><a href="#Generator-函数" class="headerlink" title="Generator 函数"></a>Generator 函数</h1><p>Generator 函数是 ES6 提供的一种异步编程解决方案。</p>
 <p>特征：<br>function 与函数名之间有个星号（*）</p>
 <p>函数体内部使用<code>yield</code>表达式</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"hello"</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"world"</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"ending"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<hr>
 <h1 id="async-函数"><a href="#async-函数" class="headerlink" title="async 函数"></a>async 函数</h1><p>async 函数就是 Generator 函数的语法糖，把 Generator 函数里面的星号（*）替换成 async，yield 替换成 await。</p>
 <ul>
 <li>await 函数返回一个 Promise 对象</li>
@@ -518,6 +532,7 @@ daovoice('update');
 <li>await 命令只能用在 async 函数之中，如果用在普通函数，就会报错。</li>
 </ul>
 <p>async 函数与 Promise、Generator 函数的比较，async 函数更简洁，更具有语义，但是 async 不要滥用，会造成页面堵塞</p>
+<hr>
 <h1 id="class-继承"><a href="#class-继承" class="headerlink" title="class 继承"></a>class 继承</h1><p>Class 可以通过 extends 关键字实现继承</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 
@@ -564,6 +579,7 @@ daovoice('update');
 
 <p>上面代码中，ColorPoint 继承了 Point，导致前者原型的原型是后者的原型。</p>
 <p>因此，通过子类实例的<code>__proto__</code>.<code>__proto__</code>属性，可以修改父类实例的行为。</p>
+<hr>
 <h1 id="MiXin-模式的实现"><a href="#MiXin-模式的实现" class="headerlink" title="MiXin 模式的实现"></a>MiXin 模式的实现</h1><p>Mixin 指的是多个对象合成一个新的对象，新对象具有各个组成成员的接口。它的最简单实现如下。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line">  a: <span class="string">"a"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> b = &#123;</span><br><span class="line">  b: <span class="string">"b"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> c = &#123; ...a, ...b &#125;; <span class="comment">// &#123;a: 'a', b: 'b'&#125;</span></span><br></pre></td></tr></table></figure>
 
@@ -795,7 +811,7 @@ daovoice('update');
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Babel转码器"><span class="nav-number">1.</span> <span class="nav-text">Babel转码器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#let与const命令"><span class="nav-number">2.</span> <span class="nav-text">let与const命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#let-命令"><span class="nav-number">2.1.</span> <span class="nav-text">let 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const-命令"><span class="nav-number">2.2.</span> <span class="nav-text">const 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#let-const-var的区别"><span class="nav-number">2.3.</span> <span class="nav-text">let const var的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解构赋值"><span class="nav-number">3.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展运算符"><span class="nav-number">4.</span> <span class="nav-text">扩展运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板字符串"><span class="nav-number">5.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箭头函数"><span class="nav-number">6.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Symbol"><span class="nav-number">7.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Promise-对象"><span class="nav-number">8.</span> <span class="nav-text">Promise 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#promis-简介"><span class="nav-number">8.1.</span> <span class="nav-text">promis 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promsie-用法"><span class="nav-number">8.2.</span> <span class="nav-text">Promsie 用法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Generator-函数"><span class="nav-number">9.</span> <span class="nav-text">Generator 函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#async-函数"><span class="nav-number">10.</span> <span class="nav-text">async 函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#class-继承"><span class="nav-number">11.</span> <span class="nav-text">class 继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-getPrototypeOf"><span class="nav-number">11.1.</span> <span class="nav-text">Object.getPrototypeOf()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super-关键字"><span class="nav-number">11.2.</span> <span class="nav-text">super 关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的-prototype-属性和-proto-属性"><span class="nav-number">11.3.</span> <span class="nav-text">类的 prototype 属性和__proto__属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MiXin-模式的实现"><span class="nav-number">12.</span> <span class="nav-text">MiXin 模式的实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ECMASript-6"><span class="nav-number">1.</span> <span class="nav-text">ECMASript 6</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Babel转码器"><span class="nav-number">2.</span> <span class="nav-text">Babel转码器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#let与const命令"><span class="nav-number">3.</span> <span class="nav-text">let与const命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#let-命令"><span class="nav-number">3.1.</span> <span class="nav-text">let 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const-命令"><span class="nav-number">3.2.</span> <span class="nav-text">const 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#let-const-var的区别"><span class="nav-number">3.3.</span> <span class="nav-text">let const var的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解构赋值"><span class="nav-number">4.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展运算符"><span class="nav-number">5.</span> <span class="nav-text">扩展运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板字符串"><span class="nav-number">6.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箭头函数"><span class="nav-number">7.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Symbol"><span class="nav-number">8.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Promise-对象"><span class="nav-number">9.</span> <span class="nav-text">Promise 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#promis-简介"><span class="nav-number">9.1.</span> <span class="nav-text">promis 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promsie-用法"><span class="nav-number">9.2.</span> <span class="nav-text">Promsie 用法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Generator-函数"><span class="nav-number">10.</span> <span class="nav-text">Generator 函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#async-函数"><span class="nav-number">11.</span> <span class="nav-text">async 函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#class-继承"><span class="nav-number">12.</span> <span class="nav-text">class 继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-getPrototypeOf"><span class="nav-number">12.1.</span> <span class="nav-text">Object.getPrototypeOf()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super-关键字"><span class="nav-number">12.2.</span> <span class="nav-text">super 关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的-prototype-属性和-proto-属性"><span class="nav-number">12.3.</span> <span class="nav-text">类的 prototype 属性和__proto__属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MiXin-模式的实现"><span class="nav-number">13.</span> <span class="nav-text">MiXin 模式的实现</span></a></li></ol></div>
             
 
           </div>
