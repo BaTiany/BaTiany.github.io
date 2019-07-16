@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-16T11:48:49.990Z</updated>
+  <updated>2019-07-16T16:18:45.726Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React生命周期</title>
+    <link href="http://yoursite.com/2019/07/16/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://yoursite.com/2019/07/16/React生命周期/</id>
+    <published>2019-07-16T15:34:40.000Z</published>
+    <updated>2019-07-16T16:18:45.726Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h1><p>React 生命周期分为三大阶段，挂载、更新、销毁</p><hr><a id="more"></a><p><img src="https://upload-images.jianshu.io/upload_images/5287253-82f6af8e0cc9012b.png?imageMogr2/auto-orient/" alt="img.png"></p><h1 id="挂载阶段"><a href="#挂载阶段" class="headerlink" title="挂载阶段"></a>挂载阶段</h1><h2 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor()"></a>constructor()</h2><p>在安装 React 组件之前，会调用它的构造函数。</p><p>通常，在 React 中，构造函数仅用于两个目的：</p><ul><li>初始化数据<code>this.state</code>。</li><li>绑定 <code>this</code> 指向。</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">  <span class="keyword">super</span>(props);</span><br><span class="line">  <span class="comment">// Don't call this.setState() here!</span></span><br><span class="line">  <span class="keyword">this</span>.state = &#123; <span class="attr">counter</span>: <span class="number">0</span> &#125;;</span><br><span class="line">  <span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="componentDidMount-组件挂载完成"><a href="#componentDidMount-组件挂载完成" class="headerlink" title="componentDidMount() 组件挂载完成"></a>componentDidMount() 组件挂载完成</h2><p>主要用于：</p><ul><li>获取异步数据，</li><li>操作 dom 之类</li></ul><h2 id="render-渲染"><a href="#render-渲染" class="headerlink" title="render() 渲染"></a>render() 渲染</h2><p>默认进来一次，后续如果有更新会再次触发</p><hr><h1 id="更新阶段"><a href="#更新阶段" class="headerlink" title="更新阶段"></a>更新阶段</h1><h2 id="getDerivedStateFromProps"><a href="#getDerivedStateFromProps" class="headerlink" title="getDerivedStateFromProps()"></a>getDerivedStateFromProps()</h2><p>能够让我们根据 props 的数据来设置 state 数据</p><ul><li><p>初始化 render 之前调用一次</p></li><li><p>后续数据有变化，重新 render 之前又会调用</p></li><li><p>不能使用 this.setState</p></li><li><p>需要 return { } | null 如果是 { } ，会将这个 { } 与 state 合并</p></li></ul><h2 id="shouldComponentUpdate-nextProps-nextState"><a href="#shouldComponentUpdate-nextProps-nextState" class="headerlink" title="shouldComponentUpdate(nextProps, nextState)"></a>shouldComponentUpdate(nextProps, nextState)</h2><p>可以用来性能优化，但是不常用</p><h2 id="componentDidUpdate-更新完成"><a href="#componentDidUpdate-更新完成" class="headerlink" title="componentDidUpdate() 更新完成"></a>componentDidUpdate() 更新完成</h2><p>componentDidUpdate() 更新发生后立即调用。初始渲染不会调用此方法。</p><p>将此作为在更新组件时对 DOM 进行操作的机会。只要您将当前道具与之前的道具进行比较（例如，如果道具未更改，则可能不需要网络请求），这也是进行网络请求的好地方。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">componentDidUpdate(prevProps) &#123;</span><br><span class="line">  <span class="comment">// Typical usage (don't forget to compare props):</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.props.userID !== prevProps.userID) &#123;</span><br><span class="line">    <span class="keyword">this</span>.fetchData(<span class="keyword">this</span>.props.userID);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h1 id="销毁阶段"><a href="#销毁阶段" class="headerlink" title="销毁阶段"></a>销毁阶段</h1><h2 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount()"></a>componentWillUnmount()</h2><p>componentWillUnmount() 在卸载和销毁组件之前立即调用。在此方法中执行任何必要的清理，例如使计时器无效，取消网络请求或清除在其中创建的任何订阅 componentDidMount()。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;React-生命周期&quot;&gt;&lt;a href=&quot;#React-生命周期&quot; class=&quot;headerlink&quot; title=&quot;React 生命周期&quot;&gt;&lt;/a&gt;React 生命周期&lt;/h1&gt;&lt;p&gt;React 生命周期分为三大阶段，挂载、更新、销毁&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://yoursite.com/categories/React/"/>
+    
+    
+      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React</title>
+    <link href="http://yoursite.com/2019/07/16/React/"/>
+    <id>http://yoursite.com/2019/07/16/React/</id>
+    <published>2019-07-16T15:02:51.000Z</published>
+    <updated>2019-07-16T15:33:24.429Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><p>React 是一个用于构建用户界面的 JAVASCRIPT 库，主要用于构建 UI，很多人认为 React 是 MVC 中的 V（视图），并且 React 拥有较高的性能，代码逻辑非常简单。React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。</p><hr><a id="more"></a><h1 id="JSX-语法"><a href="#JSX-语法" class="headerlink" title="JSX 语法"></a>JSX 语法</h1><p>JSX 通俗来说就是 JavaScript 与 XML</p><p>JSX 语法的特点：</p><ol><li><p>单个根元素<br></p></li><li><p>单标签一定要闭合<br></p></li><li><p>img 标签一定要有 alt 属性 <br></p></li><li><p>标签都是小写字母，组件首字母大写<br></p></li><li><p>class 要写成 className</p></li><li><p>for 要写成 htmlFor</p></li><li><p>写 style 样式要写成对象的形式</p></li></ol><p>jsx 的注释：使用 js 的注释</p><p>jsx 的插值表达式</p><ul><li><p>使用单个 花括号 来作为表达式</p></li><li><p>只能是简单的单个表达式，不能是语句也不能是条件或循环语句。</p></li><li><p>如果要使用条件的，可以采用 三元运算符（三目运算符）<br>{ ‘’ } | { false } | {null} | {undefined} 这些情况的话，会没有任何输出</p></li><li><p>v-html 需要时 <code>dangerouslySetInnerHTML</code>这个属性，<br><code>dangerouslySetInnerHTML</code> 这个属性需要接受一个对象的 value</p></li></ul><hr><h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><p>React 中没有全局组件的概念，你要使用哪个组件，必须要引入进来使用</p><p>组件的定义</p><p>函数式组件</p><ul><li><p>定义一个函数，然后 return 出来一段 jsx 语法。这一段 jsx 语法就是这个组件的模板内容</p></li><li><p>函数名字就是组件的名字，所以首字母要大写</p></li></ul><p>类组件</p><ul><li><p>定义一个类，类名就是组件名（大写首字母）</p></li><li><p>这个类需要继承 React.Component 这个基础组件<br>类中的 render 函数是必须，render 函数 return 出来是一段 jsx 语法，这一段 jsx 语法就是这个组件的模板内容</p></li></ul><p>组件的注意事项</p><ul><li><p>组件的模板内容，如果需要换行去写的话，那么请使用 ( ) 包裹起来</p></li><li><p>组件的模板内容是 jsx 语法，所以还需要保证 jsx 特点</p></li></ul><hr><h1 id="组件的-props-属性"><a href="#组件的-props-属性" class="headerlink" title="组件的 props 属性"></a>组件的 props 属性</h1><ul><li>调用组件时，在组件标签上写的属性，属性名就是个 prop</li></ul><ul><li>props 是个集合 ， prop 是具体的某一个</li></ul><ul><li>vue 中要使用 props. 首先需要在组件中定义 props 的选项，而 react 中不需要</li></ul><p>组件 prop 的校验</p><p>需要安装 prop-types 的模块</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev prop-types</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">yarn add prop-types -D</span><br></pre></td></tr></table></figure><h1 id="组件中的-State"><a href="#组件中的-State" class="headerlink" title="组件中的 State"></a>组件中的 State</h1><p>State 与 props 类似，但是 state 是私有的，并且完全受控于当前组件</p><p>组件有没有状态，主要就看这个组件有没有 state</p><p>一般 类组件就可以称为 有状态组件， 函数组件 叫 无状态组件</p><p>想让组件自己去更新 UI，那么首先需要让这个组件有自己的 state。 然后 state 如果发生变化，它就会重新渲染。</p><p>组件要有变化，两种方式</p><ul><li><p>组件接收到的 props 有了变化</p></li><li><p>组件自身的 state 有了变化，组件的 state 或 props 有变化，组件就会更新，更新的效果其实就是类组件的 render 函数重新执行了，函数组件重新调用了</p></li></ul><p>PS: 1. 如果要让组件有 state, 首先要确保这个组件是类组件。</p><ol start="2"><li>要在 构造函数中定义 状态的初始值。 3. 写了 构造函数的话，就必须在构造函数的第一行调用父类的构造函数 super()</li></ol><hr><h1 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h1><p>父组件 – &gt; 子组件： <code>porp</code></p><p>子组件 –&gt; 父组件:</p><ul><li><p>调用子组件的时候，传递一个自己的方法下去，这个方法里面有修改自己 state 的功能</p></li><li><p>子组件通过 this.props.propName()</p></li></ul><hr><h1 id="事件处理函数需要-修改-this-指向"><a href="#事件处理函数需要-修改-this-指向" class="headerlink" title="事件处理函数需要 修改 this 指向"></a>事件处理函数需要 修改 this 指向</h1><ul><li><p>不能使用 apply 与 call,apply 与 call 会立即执行，而 bind 是返回一个新的函数</p></li><li><p>jsx bind （ 不推荐 ）</p></li><li><p>箭头函数 （ 不推荐 ）</p></li><li><p>统一在 构造函数 中去做 this 绑定 （ 推荐 ）</p></li><li><p>使用 实验性 public class fields 语法 （ 推荐 ）</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;React&quot;&gt;&lt;a href=&quot;#React&quot; class=&quot;headerlink&quot; title=&quot;React&quot;&gt;&lt;/a&gt;React&lt;/h1&gt;&lt;p&gt;React 是一个用于构建用户界面的 JAVASCRIPT 库，主要用于构建 UI，很多人认为 React 是 MVC 中的 V（视图），并且 React 拥有较高的性能，代码逻辑非常简单。React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://yoursite.com/categories/React/"/>
+    
+    
+      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>ECMASript 6</title>
