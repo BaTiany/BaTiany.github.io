@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Clearlove&#39;s blog">
 <meta property="og:description" content="AjaxAjax 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。 这并不是一种新的技术，而是好多旧的技术融合在了一起，而产生了一种新的思想。它包含的技术有：JavaScript、xml、HTML 、dom、XMLHttpRequest 等。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-17T02:02:46.715Z">
+<meta property="og:updated_time" content="2019-07-17T03:35:54.118Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax和跨域">
 <meta name="twitter:description" content="AjaxAjax 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。 这并不是一种新的技术，而是好多旧的技术融合在了一起，而产生了一种新的思想。它包含的技术有：JavaScript、xml、HTML 、dom、XMLHttpRequest 等。">
@@ -404,7 +404,7 @@ daovoice('update');
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  783
+                  789
                 </span>
               
 
@@ -470,7 +470,7 @@ daovoice('update');
 </li>
 </ul>
 <p>2、JSONP 的方式</p>
-<p>JSONP 之所以能够用来解决跨域方案,主要是因为 <script> 脚本拥有跨域能力，客户端网页网页通过添加一个<script>元素，向服务器请求 JSON 数据，这种做法不受同源政策限制</p>
+<p>JSONP 之所以能够用来解决跨域方案,主要是因为 <code>&lt;script&gt;</code> 脚本拥有跨域能力，客户端网页网页通过添加一个<code>&lt;script&gt;</code>元素，向服务器请求 JSON 数据，这种做法不受同源政策限制</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">unction addScriptTag(src) &#123;</span><br><span class="line">  <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">  script.setAttribute(<span class="string">"type"</span>,<span class="string">"text/javascript"</span>);</span><br><span class="line">  script.src = src;</span><br><span class="line">  <span class="built_in">document</span>.body.appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  addScriptTag(<span class="string">'http://example.com/ip?callback=foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'response data: '</span> + <span class="built_in">JSON</span>.stringify(data));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>3、正向代理<br>4、node 中间件实现跨域代理</p>
@@ -482,7 +482,7 @@ daovoice('update');
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">var</span> proxy = <span class="built_in">require</span>(<span class="string">"http-proxy-middleware"</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(</span><br><span class="line">  <span class="string">"/"</span>,</span><br><span class="line">  proxy(&#123;</span><br><span class="line">    <span class="comment">// 代理跨域目标接口</span></span><br><span class="line">    target: <span class="string">"http://www.domain2.com:8080"</span>,</span><br><span class="line">    changeOrigin: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 修改响应头信息，实现跨域并允许带cookie</span></span><br><span class="line">    onProxyRes: <span class="function"><span class="keyword">function</span>(<span class="params">proxyRes, req, res</span>) </span>&#123;</span><br><span class="line">      res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"http://www.domain1.com"</span>);</span><br><span class="line">      res.header(<span class="string">"Access-Control-Allow-Credentials"</span>, <span class="string">"true"</span>);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 修改响应信息中的cookie域名</span></span><br><span class="line">    cookieDomainRewrite: <span class="string">"www.domain1.com"</span> <span class="comment">// 可以为false，表示不修改</span></span><br><span class="line">  &#125;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Proxy server is listen at port 3000..."</span>);</span><br></pre></td></tr></table></figure>
 
 <hr>
-</script></p>
+
       
     </div>
     
